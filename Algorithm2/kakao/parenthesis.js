@@ -1,4 +1,4 @@
-// 문제 설명
+// 문제 설명 (포스팅 완료)
 // https://programmers.co.kr/learn/courses/30/lessons/60058?language=javascript
 // 나의 풀이
 function solution(p) {

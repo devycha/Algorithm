@@ -1,3 +1,4 @@
+// 문제 설명 (포스팅 완료)
 // https://programmers.co.kr/learn/courses/30/lessons/12914?language=javascript
 function solution(n) {
   let arr = [1, 1];
