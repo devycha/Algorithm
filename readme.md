@@ -14,3 +14,4 @@
 14. [Sort- Bubble Sort](https://blog.naver.com/y2kdj9723/222533521325, "동찌의 개발일지")
 15. [Sort- Selection Sort](https://blog.naver.com/y2kdj9723/222534849339, "동찌의 개발일지")
 16. [Sort- Insertion Sort](https://blog.naver.com/y2kdj9723/222536850394, "동찌의 개발일지")
+17. [Sort- Merge Sort](https://blog.naver.com/y2kdj9723/222537687767, "동찌의 개발일지")
