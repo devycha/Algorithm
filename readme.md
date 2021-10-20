@@ -18,4 +18,5 @@
 18. [Sort- Quick Sort](https://blog.naver.com/y2kdj9723/222538673959, "동찌의 개발일지")
 19. [Sort- Radix Sort](https://blog.naver.com/y2kdj9723/222539740874, "동찌의 개발일지")
 20. [Data Structure - Class](https://blog.naver.com/y2kdj9723/222540335093, "동찌의 개발일지")
-21. [Data Structure - Singly Linked List](https://blog.naver.com/y2kdj9723/222541479378, "동찌의 개발일지")
+21. [Data Structure - Singly Linked List-1](https://blog.naver.com/y2kdj9723/222541479378, "동찌의 개발일지")
+21. [Data Structure - Singly Linked List-2](https://blog.naver.com/y2kdj9723/222542535974, "동찌의 개발일지")
