@@ -86,6 +86,32 @@ class SinglyLinkedList {
     this.length++;
     return newNode
   }
+  remove(idx) {
+    if (idx < 0 || idx >= this.length) return null
+    if (index == this.length-1) this.pop()
+    if (index == 0) return this.shift()
+    let prevNode = this.get(idx-1)
+    let removeNode = prevNode
+    prevNode.next = removeNode.next
+    this.length--;
+    return removeNode
+  }
+  reverse() {
+    let node = this.head; // 맨 처음에 Head였던 노드
+    this.head = this.tail;
+    this.tail = node;
+
+    let next;
+    let prev = null
+
+    for (let i = 0; i < this.length; i++)  {
+      next = node.next // 다음노드
+      node.next = prev; // 현재노드의 next를 이전노드로 지정
+      prev = node; // 이전노드를 현재노드로 업데이트
+      node = next // 현재노드를 다음노드로 업데이트
+    }
+    return this;
+  }
 }
 
 let ssl = new SinglyLinkedList()
