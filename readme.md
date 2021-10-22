@@ -21,3 +21,4 @@
 21. [Data Structure - Singly Linked List-1](https://blog.naver.com/y2kdj9723/222541479378, "동찌의 개발일지")
 22. [Data Structure - Singly Linked List-2](https://blog.naver.com/y2kdj9723/222542535974, "동찌의 개발일지")
 23. [Data Structure - Doubly Linked List-1](https://blog.naver.com/y2kdj9723/222544007480, "동찌의 개발일지")
+24. [Data Structure - Doubly Linked List-2](https://blog.naver.com/y2kdj9723/222544970357, "동찌의 개발일지")
