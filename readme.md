@@ -24,3 +24,4 @@
 24. [Data Structure - Doubly Linked List-2](https://blog.naver.com/y2kdj9723/222544970357, "동찌의 개발일지")
 25. [Data Structure - Stack](https://blog.naver.com/y2kdj9723/222546585981, "동찌의 개발일지")
 26. [Data Structure - Queue](https://blog.naver.com/y2kdj9723/222547057157, "동찌의 개발일지")
+27. [Data Structure - Binary Search Tree](https://blog.naver.com/y2kdj9723/222549059961, "동찌의 개발일지")
