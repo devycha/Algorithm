@@ -57,12 +57,59 @@ class BinarySearchTree {
       } 
     }
   }
+  BFS() {
+    let queue = [];
+    let data = [];
+    queue.push(this.root)
+    while (queue.length) {
+      let node = queue.shift()
+      data.push(node)
+      if (node.left) queue.push(node.left)
+      if (node.right) queue.push(node.right)
+    }
+    return data;
+  }
+  DFS_preorder() {
+    let data = [];
+    function traverse(node) {
+      data.push(node);
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return data;
+  }
+  DFS_postorder() {
+    let data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      if (node.right) traverse(node.right);
+      data.push(node);
+    }
+    traverse(this.root);
+    return data;
+  }
+  DFS_inorder() {
+    let data = [];
+    function traverse(node) {
+      if (node.left) traverse(node.left);
+      data.push(node);
+      if (node.right) traverse(node.right);
+    }
+    traverse(this.root);
+    return data;
+  }
+  
 }
 
 let bst = new BinarySearchTree();
 bst.insert(10)
 bst.insert(9)
+bst.insert(8)
+bst.insert(7)
 bst.insert(11)
 bst.insert(12)
 bst.insert(13)
-console.log(bst.search(12))
+bst.insert(14)
+bst.insert(15)
+console.log(bst.DFS_inorder())
