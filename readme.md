@@ -25,4 +25,5 @@
 25. [Data Structure - Stack](https://blog.naver.com/y2kdj9723/222546585981, "동찌의 개발일지")
 26. [Data Structure - Queue](https://blog.naver.com/y2kdj9723/222547057157, "동찌의 개발일지")
 27. [Data Structure - Binary Search Tree](https://blog.naver.com/y2kdj9723/222549059961, "동찌의 개발일지")
-27. [Data Structure - Tree Traverse](https://blog.naver.com/y2kdj9723/222551585644, "동찌의 개발일지")
+28. [Data Structure - Tree Traverse](https://blog.naver.com/y2kdj9723/222551585644, "동찌의 개발일지")
+29. [Data Structure - Binary Heap](https://blog.naver.com/y2kdj9723/222553432867, "동찌의 개발일지")
