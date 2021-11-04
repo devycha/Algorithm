@@ -1,3 +1,5 @@
+const { resourceLimits } = require("worker_threads");
+
 class Graph {
   constructor() {
     this.adjacencyList = {};
@@ -31,17 +33,83 @@ class Graph {
       return undefined;
     }
   }
+  DFS(start) {
+    const result = [];
+    const visited = {};
+    const adjacencyList = this.adjacencyList;
+
+    function dfs(vertex) {
+      if (!vertex) return null;
+      visited[vertex] = true;
+      result.push(vertex)
+      adjacencyList[vertex].forEach((neighbor) => {
+        if(!visited[neighbor]) {
+          dfs(neighbor);
+        }
+      })
+    }
+
+    dfs(start)
+    return result
+  }
+  DFS_iterative(start) {
+    const stack = [start];
+    const visited = {};
+    visited[start] = true;
+
+    const result = [];
+    let currentVertex;
+
+    while (stack.length) {
+      currentVertex = stack.pop();
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if (!visited[neighbor]) {
+          visited[neighbor] = true;
+          stack.push(neighbor);
+        }
+      })
+    }
+    return result;
+  }
+  BFS(start) {
+    const queue = [start];
+    const visited = {};
+    visited[start] = true;
+
+    let currentVertex;
+    const result = [];
+    
+    while (queue.length) {
+      currentVertex = queue.shift();
+      result.push(currentVertex);
+
+      this.adjacencyList[currentVertex].forEach(neighbor => {
+        if(!visited[neighbor]) {
+          visited[neighbor] = true;
+          queue.push(neighbor)
+        }
+      })
+    }
+    return result;
+  }
 }
 
 const g = new Graph();
-g.addVertex("a")
-g.addVertex("b")
-g.addVertex("c")
-g.addEdge("a", "b")
-g.addEdge("a", "c")
-g.addEdge("c", "b")
-console.log(g)
-g.removeEdge("a", "b")
-console.log(g)
-g.removeVertex("c")
-console.log(g)
+g.addVertex("A")
+g.addVertex("B")
+g.addVertex("C")
+g.addVertex("D")
+g.addVertex("E")
+g.addVertex("F")
+
+g.addEdge("A", "B")
+g.addEdge("A", "C")
+g.addEdge("B", "D")
+g.addEdge("C", "E")
+g.addEdge("D", "E")
+g.addEdge("D", "F")
+g.addEdge("E", "F")
+
+console.log(g.BFS("A"))

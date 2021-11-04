@@ -30,3 +30,4 @@
 30. [Data Structure - Priority Queue](https://blog.naver.com/y2kdj9723/222554326203, "동찌의 개발일지")
 31. [Data Structure - Hash Table](https://blog.naver.com/y2kdj9723/222555341521, "동찌의 개발일지")
 32. [Data Structure - Graph Implement](https://blog.naver.com/y2kdj9723/222556220837, "동찌의 개발일지")
+33. [Data Structure - Graph Traverse](https://blog.naver.com/y2kdj9723/222558406952, "동찌의 개발일지")
