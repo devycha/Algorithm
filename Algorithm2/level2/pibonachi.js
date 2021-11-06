@@ -30,3 +30,21 @@ function solution(n) {
 }
 // 후기: (A+B)%C = ((A%C)+(B%C))%C 를 이용하여야 오류가 안나고 잘 실행된다. 왜냐하면 
 //      자바스크립트는 Number.MAX_SAFE_INTEGER라는 것이 있다. 9007199254740991가 넘어가게되면 오류가 되므로 계산 중간중간에 나머지를 구해서 더해주는 방법을 사용하는 것이 좋다.
+
+function fib(n, memo = [0, 1, 1]) {
+  if (memo[n]) return memo[n]
+  let num = fib(n-1, memo) + fib(n-2, memo);
+  memo[n] = num;
+  return num;
+}
+
+function fib2(n) {
+  let fibonachi = [0, 1, 1];
+  if (n <= 2) return fibonachi[n]
+  for (let i = 3; i <= n; i++) {
+    fibonachi[i] = fibonachi[i-1] + fibonachi[i-2];
+  }
+  return fibonachi[n]
+}
+
+console.log(fib2(7))
