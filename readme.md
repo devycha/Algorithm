@@ -37,3 +37,4 @@
 
 # Javascript Algorithm with Programmers
   1. [Level3 - 피로도](https://blog.naver.com/y2kdj9723/222562902814, "동찌의 개발일지")
+  2. [Level3 - 네트워크](https://blog.naver.com/y2kdj9723/222565379390, "동찌의 개발일지")
