@@ -60,4 +60,4 @@
 
 - [Gold3 - 소수의 연속합(1644)](https://blog.naver.com/y2kdj9723/222669605598, "#개발할 생각")
 - [Gold5 - 음식 평룐가(1188)](https://blog.naver.com/y2kdj9723/222668002616, "#개발할 생각")
-- [Gold5 - 음식 평룐가(1188)](https://blog.naver.com/y2kdj9723/222671304950, "#개발할 생각")
+- [Gold5 - AC(5430)](https://blog.naver.com/y2kdj9723/222671304950, "#개발할 생각")
