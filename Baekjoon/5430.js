@@ -16,7 +16,7 @@ function check(commands, count, nums) {
   let left = 0,
     right = arr.length - 1;
   let reverseCount = 0;
-
+  console.log(left, right);
   for (let i = 0; i < commands.length; i++) {
     if (commands[i] == "R") {
       reverseCount++;
@@ -32,21 +32,17 @@ function check(commands, count, nums) {
   if (left > right + 1) {
     console.log("error");
   } else {
-    if (right - left == 1 && arr.length == 0) {
-      console.log("error");
-    } else {
-      let result = [];
-      if (reverseCount % 2 == 0) {
-        for (let i = left; i <= right; i++) {
-          result.push(arr[i]);
-        }
-      } else {
-        for (let i = right; i >= left; i--) {
-          result.push(arr[i]);
-        }
+    let result = [];
+    if (reverseCount % 2 == 0) {
+      for (let i = left; i <= right; i++) {
+        result.push(arr[i]);
       }
-      result = "[" + result.join(",") + "]";
-      console.log(result);
+    } else {
+      for (let i = right; i >= left; i--) {
+        result.push(arr[i]);
+      }
     }
+    result = "[" + result.join(",") + "]";
+    console.log(result);
   }
 }
