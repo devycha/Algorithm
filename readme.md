@@ -53,6 +53,7 @@
 
 ## Silver
 
+- [Silver1 - RGB 거리(1149)](https://blog.naver.com/y2kdj9723/222674284697, "#개발할 생각")
 - [Silver2 - DFS & BFS(1260)](https://blog.naver.com/y2kdj9723/222670673326, "#개발할 생각")
 - [Silver3 - 제곱수의 합(1699)](https://blog.naver.com/y2kdj9723/222668714258, "#개발할 생각")
 
