@@ -65,3 +65,4 @@
 - [Gold5 - 음식 평룐가(1188)](https://blog.naver.com/y2kdj9723/222668002616, "#개발할 생각")
 - [Gold5 - AC(5430)](https://blog.naver.com/y2kdj9723/222671304950, "#개발할 생각")
 - [Gold5 - 암호 만들기(1759)](https://blog.naver.com/y2kdj9723/222677879814, "#개발할 생각")
+- [Gold5 - 토마토(7576)](https://blog.naver.com/y2kdj9723/222679137116, "#개발할 생각")
