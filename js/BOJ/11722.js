@@ -1,3 +1,4 @@
+// 문제 링크: https://www.acmicpc.net/problem/11722
 /**
  * 입력값 예시
  * 6
