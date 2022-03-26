@@ -56,6 +56,7 @@
 - [Silver1 - RGB 거리(1149)](https://blog.naver.com/y2kdj9723/222674284697, "#개발할 생각")
 - [Silver1 - 미로 탐색(2178), 그래프](https://blog.naver.com/y2kdj9723/222677450980, "#개발할 생각")
 - [Silver1 - 골드바흐의 추측(9020), 소수, DP](https://blog.naver.com/y2kdj9723/222680128995, "#개발할 생각")
+- [Silver1 - 숨바꼭질(1697), 수학, 그래프](https://blog.naver.com/y2kdj9723/222683382426, "#개발할 생각")
 - [Silver2 - DFS & BFS(1260), 그래프](https://blog.naver.com/y2kdj9723/222670673326, "#개발할 생각")
 - [Silver2 - 가장 긴 증가하는 부분수열(11053), DP](https://blog.naver.com/y2kdj9723/222681642602, "#개발할 생각")
 - [Silver3 - 제곱수의 합(1699)](https://blog.naver.com/y2kdj9723/222668714258, "#개발할 생각")
