@@ -1,7 +1,7 @@
 const fs = require("fs");
 let [MN, ...tomatoes] = fs.readFileSync("input.txt").toString().split("\n");
 const [M, N] = MN.split(" ").map(Number);
-tomatoes = tomatoes.map((tomato) => tomato.split(" ").map(Number));
+tomatoes = tomatoes.map(tomato => tomato.split(" ").map(Number));
 let queue = [];
 
 let count = 0;
@@ -46,7 +46,4 @@ if (count + none === M * N) {
     pointer++;
   }
   console.log(count + none === N * M ? days : -1);
-  // console.log(queue);
-  // console.log(tomatoes);
-  // console.log(count, none, N * M);
 }
