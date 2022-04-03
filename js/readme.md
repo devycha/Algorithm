@@ -62,6 +62,7 @@
 - [Silver2 - 유기농 배추(1012), DFS, 그래프](https://blog.naver.com/y2kdj9723/222688877846, "#개발할 생각")
 - [Silver2 - 가장 긴 증가하는 부분수열(11053), DP](https://blog.naver.com/y2kdj9723/222681642602, "#개발할 생각")
 - [Silver2 - 연결 요소의 개수(11724), DFS](https://blog.naver.com/y2kdj9723/222684414477, "#개발할 생각")
+- [Silver2 - 섬의 개수(4963), DFS](https://blog.naver.com/y2kdj9723/222690558619, "#개발할 생각")
 - [Silver3 - 제곱수의 합(1699)](https://blog.naver.com/y2kdj9723/222668714258, "#개발할 생각")
 - [Silver5 - 30(10610)](https://blog.naver.com/y2kdj9723/222675201839, "#개발할 생각")
 

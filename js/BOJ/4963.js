@@ -78,7 +78,7 @@ let arr = fs
   .readFileSync("input.txt")
   .toString()
   .split("\n")
-  .map((a) => a.split(" ").map(Number));
+  .map(a => a.split(" ").map(Number));
 arr.pop();
 
 // 초기 설정
@@ -97,8 +97,8 @@ let dy = [0, 1, -1, 0, 1, -1, 1, -1];
  * [1, 0, 1, 0, 0] -> arr[i+1]
  * [1, 0, 0, 0, 0] -> ...
  * [1, 0, 1, 0, 1] -> ...
- * [1, 0, 0, 1, 0] -> arr[i+3] = arr[i + arr[i][2]]
- * next case -> arr[i + arr[i][2] + 1]
+ * [1, 0, 0, 1, 0] -> arr[i+4] = arr[i + arr[i][1]]
+ * next case -> arr[i + arr[i][1] + 1]
  *
  * 5 4 -> i번째 index라고 하면
  * i+1번째 index부터 i+arr[i][1]번째 index까지
@@ -157,3 +157,10 @@ function dfs(landMap, checkList, current) {
     }
   }
 }
+/**
+ * 채점 결과
+ * 메모리: 11716KB
+ * 시간: 188ms
+ * 언어: JS
+ * 참고 링크: https://blog.naver.com/y2kdj9723/222690558619
+ */
