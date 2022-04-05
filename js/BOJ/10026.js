@@ -150,4 +150,5 @@ function rgbDFS(checkList, current) {
  * 메모리: 14180KB
  * 시간: 228ms
  * 언어: JS
+ * 참고 링크: https://blog.naver.com/y2kdj9723/222692482880
  */

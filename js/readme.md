@@ -74,3 +74,4 @@
 - [Gold5 - 암호 만들기(1759)](https://blog.naver.com/y2kdj9723/222677879814, "#개발할 생각")
 - [Gold5 - 토마토(7576)](https://blog.naver.com/y2kdj9723/222679137116, "#개발할 생각")
 - [Gold5 - 연구소(14502)](https://blog.naver.com/y2kdj9723/222689732498, "#개발할 생각")
+- [Gold5 - 적록색약(10026), DFS, 그래프](https://blog.naver.com/y2kdj9723/222692482880, "#개발할 생각")
