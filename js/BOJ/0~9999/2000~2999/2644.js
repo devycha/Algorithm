@@ -79,7 +79,7 @@ console.log(answer);
  * 부모가 같은 값이 있을 경우 몇촌인지 계산
  * [3 1 2 4]
  * [7 1]
- * 이면 1 + 1 => 2
+ * 이면 1 + 1 => 2촌
  */
 function check(result1, result2) {
   for (let i = 0; i < result1.length; i++) {
