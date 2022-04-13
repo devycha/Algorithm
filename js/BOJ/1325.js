@@ -108,4 +108,5 @@ function dfs(base, current, checkList) {
  * 메모리: 64880KB
  * 시간: 9468ms
  * 언어: JS
+ * 참고 링크: https://blog.naver.com/y2kdj9723/222699635017
  */
