@@ -118,6 +118,12 @@ console.log(max);
   git commit -m "fail: [BOJ-1000-JS] A+B"
 ```
 
+- 블로그 글을 작성하고 참조하고 싶을 때는 `blog:`를 추가합니다.
+
+```sh
+  git commit -m "blog: [BOJ-1000-JS] A+B"
+```
+
 ### PR 전송하기
 
 - 'PR' 메시지는 커밋 메시지와 동일합니다.
