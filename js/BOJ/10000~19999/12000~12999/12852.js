@@ -83,4 +83,5 @@ console.log(result.length - 1 + "\n" + result.join(" "));
  * 메모리: 10512KB
  * 시간: 128ms
  * 언어: JS
+ * 참고 링크: https://blog.naver.com/y2kdj9723/222700898895
  */
