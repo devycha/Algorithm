@@ -30,49 +30,127 @@
  * let i = 0 (pointer)
  * obj: adjacency object = {}
  */
-const fs = require("fs");
-let [VE, S, ...arr] = fs.readFileSync("input.txt").toString().split("\n");
-const [V, E] = VE.split(" ").map(Number);
-const start = +S;
-arr = arr.map(a => a.split(" ").map(Number));
+class MinHeap {
+  constructor() {
+    this.nodes = [];
+  }
 
-let queue = [start];
-let distance = new Array(V + 1).fill("INF");
-distance[start] = 0;
-let i = 0;
+  addNode(node) {
+    this.nodes.push(node);
+    this.bubbleUp();
+  }
 
-let obj = {};
-arr.forEach(edge => {
-  if (!obj[edge[0]]) obj[edge[0]] = [];
-  obj[edge[0]].push([edge[1], edge[2]]);
-});
+  extractMin() {
+    if (this.nodes.length === 1) {
+      return this.nodes.pop();
+    }
+    let minNode = this.nodes[0];
+    this.nodes[0] = this.nodes.pop();
+    this.sinkDown();
+    return minNode;
+  }
 
-/**
- * BFS
- */
-while (i < queue.length) {
-  let first = queue[i];
-  if (obj[first]) {
-    for (let i = 0; i < obj[first].length; i++) {
-      let adjacentNode = obj[first][i];
-      queue.push(adjacentNode[0]);
+  bubbleUp(index = this.nodes.length - 1) {
+    if (index <= 0) return;
 
-      if (distance[adjacentNode[0]] === "INF") {
-        distance[adjacentNode[0]] = distance[first] + adjacentNode[1];
-      } else {
-        distance[adjacentNode[0]] = Math.min(
-          distance[adjacentNode[0]],
-          distance[first] + adjacentNode[1]
-        );
-      }
+    let parentNodeIndex = Math.floor((index - 1) / 2);
+    let parentNode = this.nodes[parentNodeIndex];
+    let childNode = this.nodes[index];
+
+    if (parentNode.c > childNode.c) {
+      this.nodes[parentNodeIndex] = childNode;
+      this.nodes[index] = parentNode;
+      index = parentNodeIndex;
+      this.bubbleUp(index);
     }
   }
 
-  i++;
+  sinkDown(index = 0) {
+    const leftChildIndex = 2 * index + 1;
+    const rightChildIndex = 2 * index + 2;
+    const length = this.nodes.length;
+    let minimum = index;
+
+    if (!this.nodes[rightChildIndex] && !this.nodes[leftChildIndex]) return;
+    if (!this.nodes[rightChildIndex]) {
+      if (this.nodes[leftChildIndex].c < this.nodes[minimum].c) {
+        minimum = leftChildIndex;
+      }
+      return;
+    }
+
+    if (this.nodes[leftChildIndex].c > this.nodes[rightChildIndex].c) {
+      if (
+        rightChildIndex <= length &&
+        this.nodes[rightChildIndex].c < this.nodes[minimum].c
+      ) {
+        minimum = rightChildIndex;
+      }
+    } else {
+      if (
+        leftChildIndex <= length &&
+        this.nodes[leftChildIndex].c < this.nodes[minimum].c
+      ) {
+        minimum = leftChildIndex;
+      }
+    }
+
+    if (minimum !== index) {
+      let t = this.nodes[minimum];
+      this.nodes[minimum] = this.nodes[index];
+      this.nodes[index] = t;
+      this.sinkDown(minimum);
+    }
+  }
 }
-console.log(distance.join("\n"));
+
+const fs = require("fs");
+let [VE, S, ...arr] = fs.readFileSync("/dev/stdin").toString().split("\n");
+const [V, E] = VE.trim().split(" ").map(Number);
+const start = +S.trim();
+arr = arr.map(a => a.trim().split(" ").map(Number));
+
+let adjacentList = Array.from(V + 1, () => new Array());
+arr.forEach(a => {
+  if (!adjacentList[a[0]]) adjacentList[a[0]] = [];
+  adjacentList[a[0]].push({ v: a[1], c: a[2] });
+});
+
+let distance = new Array(V + 1).fill(Infinity);
+distance[start] = 0;
+
+let minHeap = new MinHeap();
+minHeap.addNode({ v: start, c: 0 });
+
+while (minHeap.nodes.length) {
+  const now = minHeap.extractMin();
+  const v = now.v;
+  const c = now.c;
+
+  if (adjacentList[v] === undefined) continue;
+  if (distance[v] < c) continue;
+  for (let i = 0; i < adjacentList[v].length; i++) {
+    const nt = adjacentList[v][i];
+    const next = nt.v;
+    const nextCost = nt.c;
+    if (distance[next] > c + nextCost) {
+      distance[next] = c + nextCost;
+      minHeap.addNode({
+        v: next,
+        c: distance[next],
+      });
+    }
+  }
+}
+
+let answer = [];
+for (let i = 1; i < distance.length; i++) {
+  answer.push(distance[i] == Infinity ? "INF" : distance[i]);
+}
+console.log(answer.join("\n"));
 /**
  * 채점 결과
- * 메모리 초과: 수정 예정
+ * 메모리: 131944KB
+ * 시간: 952ms
  * 언어: JS
  */
