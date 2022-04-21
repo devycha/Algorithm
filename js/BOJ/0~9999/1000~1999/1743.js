@@ -125,4 +125,5 @@ console.log(max);
  * 메모리: 12932KB
  * 시간: 188ms
  * 언어: JS
+ * 참고 링크: https://blog.naver.com/y2kdj9723/222707250340
  */
