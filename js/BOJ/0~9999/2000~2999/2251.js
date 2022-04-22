@@ -65,6 +65,7 @@
  * 3 -> 2 : x
  */
 
+// 파싱
 const fs = require("fs");
 let limit = fs
   .readFileSync("input.txt")
@@ -72,11 +73,14 @@ let limit = fs
   .trim()
   .split(" ")
   .map(Number);
+
+// 초기 설정
 const current = [0, 0, limit[2]]; // 현재 상태: C에 가득 차있음.
 let obj = {}; // 물통에 들어있는 양의 모든 조합을 저장하는 객체
 let answer = {}; // A값이 0일 때만 C의 경우를 중복값 없이 저장하는 객체
 dfs(current); // DFS 수행
 
+// 문제 풀이
 let keys = Object.keys(obj); // 모든 물통에 들어있는 양의 모든 조합을 배열에 저장
 keys.forEach(key => {
   // 조합마다
@@ -221,4 +225,5 @@ function dfs(arr) {
  * 메모리: 9800KB
  * 시간: 120ms
  * 언어: JS
+ * 참고 링크: https://blog.naver.com/y2kdj9723/222708252044
  */
