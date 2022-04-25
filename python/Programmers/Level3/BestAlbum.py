@@ -8,7 +8,8 @@ plays
 [500, 600, 150, 800, 2500]
 
 결과예시
-	[4, 1, 3, 0]
+return
+[4, 1, 3, 0]
 """
 
 def solution(genres, plays):
