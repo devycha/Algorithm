@@ -72,4 +72,5 @@ function jump(a, b, time) {
  * 메모리: 9584KB
  * 시간: 128ms
  * 언어: JS
+ * 참고 링크: https://blog.naver.com/y2kdj9723/222710852340
  */

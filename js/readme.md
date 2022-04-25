@@ -80,3 +80,4 @@
 - [Gold5 - 연구소(14502)](https://blog.naver.com/y2kdj9723/222689732498, "#개발할 생각")
 - [Gold5 - 적록색약(10026), DFS, 그래프](https://blog.naver.com/y2kdj9723/222692482880, "#개발할 생각")
 - [Gold5 - 물통(2251)](https://blog.naver.com/y2kdj9723/222708252044, "#개발할 생각")
+- [Gold5 - 숨바꼭질(13549)](https://blog.naver.com/y2kdj9723/222710852340, "#개발할 생각")
