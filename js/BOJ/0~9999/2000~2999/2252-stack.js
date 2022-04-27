@@ -80,10 +80,11 @@ while (queue.length) {
   }
 }
 
-console.log(result);
+console.log(result.join(" "));
 /**
  * 채점 결과
  * 메모리: 49620KB
  * 시간: 400ms
  * 언어: JS
+ * 참고 링크: https://blog.naver.com/y2kdj9723/222713290827
  */
