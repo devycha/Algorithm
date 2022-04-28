@@ -12,103 +12,92 @@
  * 출력
  * 첫째 줄에 출발 도시에서 도착 도시까지 가는데 드는 최소 비용을 출력한다.
  */
-class MinHeap {
-  constructor() {
-    this.nodes = [];
-  }
-
-  addNode(node) {
-    this.nodes.push(node);
-    this.bubbleUp();
-  }
-
-  bubbleUp(index = this.nodes.length - 1) {
-    if (index == 0) return;
-
-    let parentIndex = Math.floor((index - 1) / 2);
-    let parent = this.nodes[parentIndex];
-
-    if (this.nodes[index].c < this.nodes[parentIndex].c) {
-      this.nodes[parentIndex] = this.nodes[index];
-      this.nodes[index] = parent;
-      this.bubbleUp(parentIndex);
-    }
-  }
-
-  extractMin() {
-    if (this.nodes.length == 1) return this.nodes.pop();
-
-    let min = this.nodes[0];
-    this.nodes[0] = this.nodes.pop();
-
-    this.sinkDown();
-
-    return min;
-  }
-
-  sinkDown(index = 0) {
-    let parent = this.nodes[index];
-    let leftIndex = 2 * index + 1;
-    let rightIndex = 2 * index + 2;
-
-    if (!this.nodes[leftIndex] && !this.nodes[rightIndex]) return;
-    if (!this.nodes[rightIndex]) {
-      if (this.nodes[leftIndex].c < this.nodes[index].c) {
-        this.nodes[index] = this.nodes[leftIndex];
-        this.nodes[leftIndex] = parent;
-        this.sinkDown(leftIndex);
-      }
-    } else {
-      if (this.nodes[leftIndex].c < this.nodes[rightIndex].c) {
-        if (this.nodes[leftIndex].c < this.nodes[index].c) {
-          this.nodes[index] = this.nodes[leftIndex];
-          this.nodes[leftIndex] = parent;
-          this.sinkDown(leftIndex);
-        }
-      } else {
-        if (this.nodes[rightIndex].c < this.nodes[index].c) {
-          this.nodes[index] = this.nodes[rightIndex];
-          this.nodes[rightIndex] = parent;
-          this.sinkDown(rightIndex);
-        }
-      }
-    }
-  }
-}
-
 const fs = require("fs");
-let [n, m, ...arr] = fs.readFileSync("input.txt").toString().split("\n");
-arr = arr.map(a => a.split(" ").map(Number));
+let [n, m, ...arr] = fs.readFileSync("input.txt").toString().trim().split("\n");
+arr = arr.map((a) => a.trim().split(" ").map(Number));
 let dest = arr.pop();
 let obj = {};
-let self = 0;
-arr.forEach(a => {
-  if (a[0] === dest[0] && a[1] === dest[0]) {
-    return (self = a[2]);
-  }
-  if (!obj[a[0]]) obj[a[0]] = [];
 
-  obj[a[0]].push({ v: a[1], c: a[2] });
+arr.forEach((a) => {
+  if (!obj[a[0]]) obj[a[0]] = {};
+
+  if (!obj[a[0]][a[1]]) {
+    obj[a[0]][a[1]] = a[2];
+  } else {
+    obj[a[0]][a[1]] = Math.min(obj[a[0]][a[1]], a[2]);
+  }
 });
 
-let distance = new Array(+n + 1).fill(-1);
-
-let minHeap = new MinHeap();
-minHeap.addNode({ v: dest[0], c: 0 });
-
-while (minHeap.nodes.length) {
-  let ex = minHeap.extractMin();
-  if (distance[ex.v] == -1 || distance[ex.v] > ex.c) {
-    distance[ex.v] = ex.c;
+let distance = new Array(+n + 1).fill(Infinity);
+distance[dest[0]] = 0;
+let queue = [[dest[0], 0]];
+while (queue.length) {
+  let [current, cost] = queue.shift();
+  if (queue.length >= 2) {
+    sinkDown();
   }
+  if (current == dest[1]) break;
+  if (distance[current] < cost) continue;
+  if (obj[current]) {
+    for (let key in obj[current]) {
+      let next = +key;
+      let nextCost = cost + obj[current][key];
 
-  if (obj[ex.v]) {
-    obj[ex.v].forEach(next => {
-      if (distance[next.v] > 0 && distance[next.v] < ex.c + next.c) return;
-      minHeap.addNode({ v: next.v, c: ex.c + next.c });
-    });
+      if (distance[next] > nextCost) {
+        distance[next] = nextCost;
+        queue.push([next, nextCost]);
+        bubbleUp();
+      }
+    }
   }
 }
 
-distance[dest[0]] = self;
 console.log(distance[dest[1]]);
+
+function bubbleUp(index = queue.length - 1) {
+  if (index <= 0) return;
+
+  let parentNodeIndex = Math.floor((index - 1) / 2);
+  let parentNode = queue[parentNodeIndex];
+  let childNode = queue[index];
+
+  if (parentNode[1] > childNode[1]) {
+    queue[parentNodeIndex] = childNode;
+    queue[index] = parentNode;
+    index = parentNodeIndex;
+    bubbleUp(index);
+  }
+}
+
+function sinkDown(index = 0) {
+  let leftChildIndex = index * 2 + 1;
+  let rightChildIndex = index * 2 + 2;
+
+  let originIndex = index;
+  let parent = queue[index];
+
+  if (!queue[leftChildIndex]) return;
+
+  if (!queue[rightChildIndex]) {
+    if (queue[leftChildIndex][1] < parent[1]) {
+      index = leftChildIndex;
+    }
+  } else {
+    // 자식 노드가 둘다 존재할 때
+    if (queue[leftChildIndex][1] < queue[rightChildIndex][1]) {
+      if (queue[leftChildIndex][1] < parent[1]) {
+        index = leftChildIndex;
+      }
+    } else if (queue[rightChildIndex][1] <= queue[leftChildIndex][1]) {
+      if (queue[rightChildIndex][1] < parent[1]) {
+        index = rightChildIndex;
+      }
+    }
+  }
+  if (index !== originIndex) {
+    let t = queue[index];
+    queue[index] = queue[originIndex];
+    queue[originIndex] = t;
+    sinkDown(index);
+  }
+}
