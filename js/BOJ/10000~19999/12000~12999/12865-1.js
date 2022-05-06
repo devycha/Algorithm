@@ -34,24 +34,20 @@ let [nk, ...arr] = fs.readFileSync("input.txt").toString().trim().split("\n");
 const [n, k] = nk.split(" ").map(Number);
 arr = arr.map((a) => a.split(" ").map(Number));
 
-let result = Array.from({ length: n + 1 }, () => new Array(k + 1).fill(0));
+let result = new Array(k + 1).fill(0);
 
-for (let i = 1; i <= arr.length; i++) {
-  let [w, v] = arr[i - 1];
-
-  for (let j = 0; j <= k; j++) {
-    if (j < w) {
-      result[i][j] = result[i - 1][j];
-    } else {
-      result[i][j] = Math.max(result[i - 1][j], result[i - 1][j - w] + v);
-    }
+arr.forEach((a) => {
+  let [w, v] = a;
+  for (let i = k - w; i >= 0; i--) {
+    // i부터 k-w 까지의 가치 최댓값 + 현재 물건의 가중치(w) 와 i+w의 가치 최댓값을 비교하여 업데이트
+    result[i + w] = Math.max(result[i] + v, result[i + w]);
   }
-}
+});
 
-console.log(result[n][k]);
+console.log(result[k]);
 /**
  * 채점 결과
- * 메모리: 91368KB
- * 시간: 392ms
+ * 메모리: 10432KB
+ * 시간: 212ms
  * 언어: JS
  */
