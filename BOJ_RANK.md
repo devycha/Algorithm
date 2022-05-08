@@ -17,8 +17,6 @@
 #### 🏆 골드
 
 [![백준랭킹](http://mazassumnida.wtf/api/v2/generate_badge?boj=y2kdj9723)](https://solved.ac/y2kdj9723)
-테스트2
-테스트
 
 <hr>
 
