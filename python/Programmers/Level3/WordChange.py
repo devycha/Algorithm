@@ -76,3 +76,39 @@ def compare(word1, word2):
         return True
     else:
         return False
+
+"""
+다른 사람의 풀이 참고
+
+그래프를 만들지 않고 푸는 풀이
+"""
+
+def solution(begin, target, words):
+    answer = 0
+    visited = [False] * len(words)
+    
+    if target not in words:
+        return 0
+    
+    answer = bfs(begin,target, words, visited)
+                    
+    return answer
+
+def bfs(begin, target, words, visited):
+    stack = [(begin, 0)]
+    
+    while stack:
+        node, depth = stack.pop()
+        if node == target:
+            return depth
+        
+        for i in range(len(words)):
+            if visited[i] == True:
+                continue 
+            
+            count = 0
+            for a,b in zip(node, words[i]):
+                if a != b:
+                    count += 1
+            if count == 1:
+                stack.append((words[i], depth+1))
