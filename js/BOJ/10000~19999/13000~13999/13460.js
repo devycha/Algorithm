@@ -1,3 +1,39 @@
+/**
+ * 문제 출처: 백준 온라인 져지
+ * https://www.acmicpc.net/problem/13460
+ * 
+ * 입력
+ * 첫 번째 줄에는 보드의 세로, 가로 크기를 의미하는 두 정수 N, M (3 ≤ N, M ≤ 10)이 주어진다. 다음 N개의 줄에 보드의 모양을 나타내는 길이 M의 문자열이 주어진다. 이 문자열은 '.', '#', 'O', 'R', 'B' 로 이루어져 있다. '.'은 빈 칸을 의미하고, '#'은 공이 이동할 수 없는 장애물 또는 벽을 의미하며, 'O'는 구멍의 위치를 의미한다. 'R'은 빨간 구슬의 위치, 'B'는 파란 구슬의 위치이다.
+ * 입력되는 모든 보드의 가장자리에는 모두 '#'이 있다. 구멍의 개수는 한 개 이며, 빨간 구슬과 파란 구슬은 항상 1개가 주어진다.
+ * 
+    5 5
+    #####
+    #..B#
+    #.#.#
+    #RO.#
+    #####
+ * 
+ * 출력
+ * 최소 몇 번 만에 빨간 구슬을 구멍을 통해 빼낼 수 있는지 출력한다. 만약, 10번 이하로 움직여서 빨간 구슬을 구멍을 통해 빼낼 수 없으면 -1을 출력한다.
+ * 
+    1
+ * 
+ * 파싱
+ * n = 5, m = 5
+ * arr = [
+    [ '#', '#', '#', '#', '#' ],
+    [ '#', '.', '.', 'B', '#' ],
+    [ '#', '.', '#', '.', '#' ],
+    [ '#', 'R', 'O', '.', '#' ],
+    [ '#', '#', '#', '#', '#' ]
+  ]
+ * 
+ * {{초기 설정}}
+ * 빨간공과 파란공의 위치 rb = [rx, ry, bx, by]
+ * 방문리스트 visited = {}
+ * BFS용 queue & pointer
+ * 출력용 answer = -1
+ */
 const fs = require("fs");
 let [nm, ...arr] = fs.readFileSync("input.txt").toString().trim().split("\n");
 const [n, m] = nm.split(" ").map(Number);
@@ -16,12 +52,12 @@ let answer = -1;
 while (pointer < queue.length) {
   let [rx, ry, bx, by, count] = queue[pointer++];
 
+  if (count >= 10) continue;
+
   let leftResult = left(rx, ry, bx, by);
   let rightResult = right(rx, ry, bx, by);
   let upResult = up(rx, ry, bx, by);
   let downResult = down(rx, ry, bx, by);
-
-  // console.log(leftResult, rightResult, upResult, downResult);
 
   if (leftResult) {
     if (leftResult == true) {
@@ -303,3 +339,9 @@ function down(rx, ry, bx, by) {
   // 공이 아무것도 빠지지 않고 모두 이동했을 때
   return [rx, ry, bx, by];
 }
+/**
+ * 채점 결과
+ * 메모리: 9760KB
+ * 시간: 140ms
+ * 언어: JS
+ */
