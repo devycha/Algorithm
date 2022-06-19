@@ -36,9 +36,7 @@ let cycle = false;
 // 벨만-포드 알고리즘
 for (let i = 0; i < n; i++) {
   for (let j = 0; j < m; j++) {
-    let cur = arr[j][0]; // 출발
-    let next = arr[j][1]; // 도착
-    let time = arr[j][2]; // 걸리는 시간
+    const [cur, next, time] = arr[j]; // 출발, 도착, 시간
 
     if (visited[cur] + time < visited[next]) {
       visited[next] = visited[cur] + time;
