@@ -67,20 +67,26 @@ function kruskal() {
     if (count == n - 1) break;
   }
   console.log(dist);
-
-  // UNION_FIND
-  function union(parent, a, b) {
-    a = findParent(parent, a);
-    b = findParent(parent, b);
-
-    if (a < b) parent[b] = a;
-    else parent[a] = b;
-  }
-
-  function findParent(parent, node) {
-    if (parent[node] !== node) {
-      parent[node] = findParent(parent, parent[node]);
-    }
-    return parent[node];
-  }
 }
+
+// UNION_FIND
+function union(parent, a, b) {
+  a = findParent(parent, a);
+  b = findParent(parent, b);
+
+  if (a < b) parent[b] = a;
+  else parent[a] = b;
+}
+
+function findParent(parent, node) {
+  if (parent[node] !== node) {
+    parent[node] = findParent(parent, parent[node]);
+  }
+  return parent[node];
+}
+/**
+ * 채점 결과
+ * 메모리: 12280KB
+ * 시간: 176ms
+ * 언어: JS
+ */
