@@ -1,2 +1,7 @@
 practice.js
 input.txt
+.idea
+*.iml
+*.xml
+*.class
+java/BOJ/out/
