@@ -35,17 +35,22 @@
  * cnt: 입력값 순차적 대입
  * visited: 플로이드 와샬용 배열
  */
+// @ 파싱
 const fs = require("fs");
 let [n, ...arr] = fs.readFileSync("input.txt").toString().trim().split("\n");
 arr = arr.map((a) => a.split(" ").map(Number));
 
+// @ 초기 설정
 let result = [];
 let cnt = 0;
 let visited;
 
+// @ 모든 케이스에 대하여
 while (cnt < arr.length) {
   let [n, m, w] = arr[cnt++];
   let r = m + w;
+
+  // @ 플로이드 와샬 배열 채우기
   visited = Array.from({ length: n + 1 }, () =>
     new Array(n + 1).fill(Infinity)
   );
@@ -61,6 +66,7 @@ while (cnt < arr.length) {
     }
   }
 
+  // @ 플로이드 와샬을 1번 수행
   let isChanged = false;
   for (let k = 1; k <= n; k++) {
     for (let i = 1; i <= n; i++) {
@@ -70,10 +76,14 @@ while (cnt < arr.length) {
         }
       }
     }
+  }
 
+  // @ 플로이드 와샬을 2번 수행했을 때
+  for (let k = 1; k <= n; k++) {
     for (let i = 1; i <= n; i++) {
       for (let j = 1; j <= n; j++) {
         if (visited[i][j] > visited[i][k] + visited[k][j]) {
+          // @ 값 변경이 발생하면 사이클이 일어난다고 판단하고 종료
           isChanged = true;
           visited[i][j] = visited[i][k] + visited[k][j];
           break;
@@ -88,7 +98,7 @@ while (cnt < arr.length) {
 console.log(result.join("\n"));
 /**
  * ?채점 결과
- * 메모리: 42356KB
- * 시간: 3792ms
+ * 메모리: 39608KB
+ * 시간: 3300ms
  * 언어: JS
  */

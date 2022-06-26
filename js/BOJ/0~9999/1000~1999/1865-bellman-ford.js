@@ -33,11 +33,14 @@
  * !초기 설정
  * result: 결과출력용 배열
  * cnt: 입력값 순차적 대입
+ * n, m, w, adj: (각 케이스마다의) 정점갯수, 도로갯수, 웜홀갯수, 인접리스트
  */
+// @ 파싱
 const fs = require("fs");
 let [t, ...arr] = fs.readFileSync("input.txt").toString().trim().split("\n");
 arr = arr.map((a) => a.split(" ").map(Number));
 
+// @ 초기 설정
 let result = [];
 let cnt = 0;
 let n, m, w, adj;
