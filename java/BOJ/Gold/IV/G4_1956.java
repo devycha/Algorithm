@@ -1,4 +1,4 @@
-package Gold4;
+package Gold.IV;
 
 import java.io.*;
 import java.util.Arrays;

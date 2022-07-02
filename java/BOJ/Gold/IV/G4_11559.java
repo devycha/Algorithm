@@ -36,7 +36,7 @@
  * !출력
  * 현재 주어진 상황에서 몇연쇄가 되는지 출력한다. 하나도 터지지 않는다면 0을 출력한다.
  */
-package Gold4;
+package Gold.IV;
 
 import java.io.*;
 import java.util.ArrayList;
