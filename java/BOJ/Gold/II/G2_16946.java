@@ -33,7 +33,7 @@
  * 메모리: 153400KB
  * 언어: JAVA8
  */
-package Gold.IV;
+package Gold.II;
 
 import java.io.*;
 import java.util.ArrayList;
