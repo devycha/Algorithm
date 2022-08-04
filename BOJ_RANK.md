@@ -12,11 +12,11 @@
 
 #### 🏆 플래티넘
 
+[![백준랭킹](http://mazassumnida.wtf/api/v2/generate_badge?boj=y2kdj9723)](https://solved.ac/y2kdj9723)
+
 <hr>
 
 #### 🏆 골드
-
-[![백준랭킹](http://mazassumnida.wtf/api/v2/generate_badge?boj=y2kdj9723)](https://solved.ac/y2kdj9723)
 
 <hr>
 
