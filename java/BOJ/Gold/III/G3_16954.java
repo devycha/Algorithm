@@ -34,14 +34,14 @@
  * ? 메모리: 12MB
  * ? 언어: JAVA8
  */
-package Gold.IV;
+package Gold.III;
 
 import java.io.*;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-public class G4_16954 {
+public class G3_16954 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
 
