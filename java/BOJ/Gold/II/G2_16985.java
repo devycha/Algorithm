@@ -56,7 +56,7 @@
  * * 언어: JAVA8
  * * 시도: 1
  */
-package Gold.III;
+package Gold.II;
 
 import java.io.*;
 import java.util.Arrays;
@@ -64,7 +64,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 import java.util.StringTokenizer;
 
-public class G3_16985 {
+public class G2_16985 {
     static BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     static BufferedWriter bw = new BufferedWriter(new OutputStreamWriter(System.out));
     static StringTokenizer st;
